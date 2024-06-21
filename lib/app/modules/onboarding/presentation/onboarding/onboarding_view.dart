@@ -10,6 +10,7 @@ class OnboardingView extends GetView<IOnboardingController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
         actions: [
           TextButton(
             child: Text(OnboardingTranslate.skip),
