@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:onil/app/modules/onboarding/domain/constants/onboarding_assets.dart';
 import 'package:onil/app/modules/onboarding/domain/constants/onboarding_translate.dart';
+import 'package:onil/app/routes/app_routes.dart';
 
 class OnboardingEnter extends StatelessWidget {
   const OnboardingEnter({super.key});
@@ -32,7 +34,7 @@ class OnboardingEnter extends StatelessWidget {
                 Expanded(
                   child: ElevatedButton(
                     child: Text(OnboardingTranslate.signIn),
-                    onPressed: (){},
+                    onPressed: () => Get.offNamed(AppRoutes.signIn),
                   ),
                 )
               ],

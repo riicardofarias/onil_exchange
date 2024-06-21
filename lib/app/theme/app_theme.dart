@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:onil/app/theme/app_color.dart';
 
 const _defaultFontFamily = 'Poppins';
 const _primaryColor = Color.fromRGBO(247, 179, 24, 1);
@@ -7,12 +7,7 @@ const _primaryTextColor = Color.fromRGBO(26, 26, 26, 1);
 const _buttonBorderRadius = 12.0;
 
 // Input
-const _inputBackgroundColor = Color.fromRGBO(34, 35, 38, 1);
 const _inputBorderColor = Color.fromRGBO(34, 35, 38, 1);
-const _inputTextColor = Color.fromRGBO(147, 147, 151, 1);
-
-// Text
-const _textColor = Color.fromRGBO(185, 186, 189, 1);
 
 // AppBar
 const _appBarTextColor = Color.fromRGBO(255, 255, 255, 1);
@@ -38,10 +33,9 @@ final appThemeDark = ThemeData(
   ),
   colorScheme: ColorScheme.dark(
     primary: _primaryColor,
-    secondary: Colors.green,
   ),
   textTheme: TextTheme(
-    bodyMedium: TextStyle(color: _textColor),
+    bodyMedium: TextStyle(fontSize: 14, color: AppColor.textNeutral5),
   ),
   iconButtonTheme: IconButtonThemeData(
     style: IconButton.styleFrom(
@@ -66,7 +60,7 @@ final appThemeDark = ThemeData(
     )
   ),
   inputDecorationTheme: InputDecorationTheme(
-    fillColor: _inputBackgroundColor,
+    fillColor: AppColor.inputBackgroundColor,
     filled: true,
     contentPadding: const EdgeInsets.symmetric(
       vertical: 12, horizontal: 16
@@ -84,12 +78,13 @@ final appThemeDark = ThemeData(
       borderRadius: BorderRadius.circular(_buttonBorderRadius)
     ),
     labelStyle: TextStyle(
-      color: _inputTextColor,
+      color: AppColor.textNeutral4,
+      fontWeight: FontWeight.w500
     ),
     hintStyle: TextStyle(
-      color: _inputTextColor,
+      color: AppColor.textNeutral2,
       fontWeight: FontWeight.w400
     ),
-    suffixIconColor: _inputTextColor,
+    suffixIconColor: AppColor.inputTextColor,
   ),
 );

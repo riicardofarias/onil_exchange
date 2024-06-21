@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:onil/app/modules/authentication/domain/constants/authentication_translate.dart';
 import 'package:onil/app/modules/authentication/presentation/sign-in/sign_in_controller.dart';
 import 'package:onil/app/routes/app_routes.dart';
+import 'package:onil/app/theme/app_color.dart';
+import 'package:onil/app/theme/app_style.dart';
 
 class SignInView extends GetView<ISignInController> {
   const SignInView({super.key});
@@ -18,9 +20,9 @@ class SignInView extends GetView<ISignInController> {
         child: Form(
           key: controller.formKey,
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text(AuthenticationTranslate.signInEmail),
+              Text(AuthenticationTranslate.signInEmail, style: AppStyle.labelStyle),
               SizedBox(height: 10),
               TextFormField(
                 validator: controller.validateEmail,
@@ -29,7 +31,7 @@ class SignInView extends GetView<ISignInController> {
                 ),
               ),
               SizedBox(height: 20),
-              Text(AuthenticationTranslate.signInPassword),
+              Text(AuthenticationTranslate.signInPassword, style: AppStyle.labelStyle),
               SizedBox(height: 10),
               Obx(
                 () => TextFormField(
@@ -45,17 +47,17 @@ class SignInView extends GetView<ISignInController> {
                 ),
               ),
               SizedBox(height: 10),
-              TextButton(
-                onPressed: () => Get.toNamed(AppRoutes.forgotPassword),
-                child: Text(AuthenticationTranslate.signInForgotPassword)
+              Align(
+                alignment: Alignment.centerLeft,
+                child: TextButton(
+                  onPressed: () => Get.toNamed(AppRoutes.forgotPassword),
+                  child: Text(AuthenticationTranslate.signInForgotPassword)
+                ),
               ),
               SizedBox(height: 40),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: controller.onSignInPressed,
-                  child: Text(AuthenticationTranslate.signInEnter, style: TextStyle(fontSize: 18))
-                ),
+              ElevatedButton(
+                onPressed: controller.onSignInPressed,
+                child: Text(AuthenticationTranslate.signInEnter, style: AppStyle.buttonLargeTextStyle)
               )
             ],
           ),
@@ -66,7 +68,9 @@ class SignInView extends GetView<ISignInController> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(AuthenticationTranslate.signInNewUser),
+            Text(AuthenticationTranslate.signInNewUser, style: TextStyle(
+              color: AppColor.textNeutral2
+            )),
             TextButton(
               onPressed: (){},
               child: Text(AuthenticationTranslate.signInCreateAccount)
