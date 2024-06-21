@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:onil/app/modules/onboarding/constants/onboarding_translate.dart';
+import 'package:onil/app/modules/onboarding/domain/constants/onboarding_translate.dart';
 import 'package:onil/app/modules/onboarding/presentation/onboarding/onboarding_controller.dart';
 import 'package:onil/app/modules/onboarding/presentation/onboarding/pages/exports.dart';
+import 'package:onil/app/routes/app_routes.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingView extends GetView<IOnboardingController> {
@@ -14,12 +15,13 @@ class OnboardingView extends GetView<IOnboardingController> {
         actions: [
           TextButton(
             child: Text(OnboardingTranslate.skip),
-            onPressed: (){}
+            onPressed: () => Get.offNamed(AppRoutes.signIn)
           )
         ],
       ),
       body: PageView(
         controller: controller.pageCtrl,
+        onPageChanged: controller.onPageChanged,
         children: [
           OnboardingWelcome(),
           OnboardingSecureTransactions(),

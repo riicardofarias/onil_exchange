@@ -14,7 +14,7 @@ class AppHome extends StatelessWidget {
       initialBinding: AppBindings(),
       debugShowCheckedModeBanner: false,
       title: 'Onil Exchange',
-      theme: appTheme,
+      theme: appThemeDark,
       initialRoute: AppPages.initial,
       getPages: AppPages.routes,
       translations: AppTranslations(),

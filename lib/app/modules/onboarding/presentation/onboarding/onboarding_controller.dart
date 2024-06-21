@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:onil/app/routes/app_routes.dart';
 
 abstract class IOnboardingController extends GetxController {
-  void onSkip();
   void onContinue();
   void onPageChanged(int index);
 
@@ -12,19 +12,21 @@ abstract class IOnboardingController extends GetxController {
 
 class OnboardingController extends IOnboardingController {
   final PageController _pageCtrl = PageController();
+  int _currentIndex = 0;
 
   @override
   void onContinue() {
+    if (_currentIndex == pageCount - 1) {
+      Get.offAndToNamed(AppRoutes.signIn);
+      return;
+    }
+
     _pageCtrl.nextPage(duration: Duration(milliseconds: 100), curve: Curves.easeIn);
   }
 
   @override
   void onPageChanged(int index) {
-  }
-
-  @override
-  void onSkip() {
-    // TODO: implement onSkip
+    _currentIndex = index;
   }
 
   @override
