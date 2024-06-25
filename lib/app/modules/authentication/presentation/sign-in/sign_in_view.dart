@@ -26,6 +26,7 @@ class SignInView extends GetView<ISignInController> {
               SizedBox(height: 10),
               TextFormField(
                 validator: controller.validateEmail,
+                keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
                   hintText: AuthenticationTranslate.signInEmailHint,
                 ),
@@ -72,7 +73,7 @@ class SignInView extends GetView<ISignInController> {
               color: AppColor.textNeutral2
             )),
             TextButton(
-              onPressed: (){},
+              onPressed: () => Get.toNamed(AppRoutes.signUp),
               child: Text(AuthenticationTranslate.signInCreateAccount)
             ),
           ],

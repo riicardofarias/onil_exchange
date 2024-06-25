@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:onil/app/theme/app_text_theme.dart';
 
 extension StateCtrl<T> on StateMixin<T> {
   Widget useStatus(NotifierBuilder<RxStatus> widget) {

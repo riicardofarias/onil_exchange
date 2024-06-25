@@ -6,6 +6,10 @@ class AppStyle {
     color: AppColor.textNeutral4, fontWeight: FontWeight.w500
   );
 
+  static TextStyle get smallLabelStyle => TextStyle(
+    fontSize: 12,
+  );
+
   static TextStyle get buttonLargeTextStyle => TextStyle(
     fontSize: 18
   );
