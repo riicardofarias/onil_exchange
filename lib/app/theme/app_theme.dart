@@ -13,6 +13,10 @@ const _inputBorderColor = Color.fromRGBO(34, 35, 38, 1);
 const _appBarTextColor = Color.fromRGBO(255, 255, 255, 1);
 const _appBarIconColor = Color.fromRGBO(255, 255, 255, 1);
 
+const _cardColor = Color.fromRGBO(33, 33, 33, 1);
+const _bottomNavigationBarColor = Color.fromRGBO(36, 38, 46, 1);
+const _dividerColor = Color.fromRGBO(33, 33, 33, 1);
+
 final appThemeDark = ThemeData(
   useMaterial3: true,
   brightness: Brightness.dark,
@@ -40,8 +44,13 @@ final appThemeDark = ThemeData(
   ),
   iconButtonTheme: IconButtonThemeData(
     style: IconButton.styleFrom(
-      foregroundColor: _primaryTextColor,
+      foregroundColor: AppColor.textNeutral5,
     ),
+  ),
+  floatingActionButtonTheme: FloatingActionButtonThemeData(
+    backgroundColor: _primaryColor,
+    foregroundColor: AppColor.textNeutral5,
+    iconSize: 36,
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
@@ -87,5 +96,10 @@ final appThemeDark = ThemeData(
       fontWeight: FontWeight.w400
     ),
     suffixIconColor: AppColor.inputTextColor,
+  ),
+  bottomNavigationBarTheme: BottomNavigationBarThemeData(
+    backgroundColor: _bottomNavigationBarColor,
+    selectedItemColor: _primaryColor,
+    unselectedItemColor: AppColor.textNeutral4,
   ),
 );

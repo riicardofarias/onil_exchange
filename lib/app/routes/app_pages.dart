@@ -13,7 +13,7 @@ import 'package:onil/app/routes/app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const initial = AppRoutes.onboarding;
+  static const initial = AppRoutes.home;
 
   static final routes = [
     GetPage(
