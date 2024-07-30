@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
+import 'package:onil/app/modules/home/domain/repository/quotation.dart';
 import 'package:onil/app/modules/home/infra/data/quotation.dart';
-import 'package:onil/app/modules/home/infra/repository/quotation_repository.dart';
 
 class QuotationController extends GetxController with StateMixin<List<Quotation>> {
   final IQuotationRepository _quotationRepository;

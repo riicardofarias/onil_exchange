@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
+import 'package:onil/app/modules/home/domain/repository/balance.dart';
 import 'package:onil/app/modules/home/infra/data/user_wallet.dart';
-import 'package:onil/app/modules/home/infra/repository/balance_repository.dart';
 
 class BalanceController extends GetxController with StateMixin<List<UserWallet>> {
   final IBalanceRepository _balanceRepository;

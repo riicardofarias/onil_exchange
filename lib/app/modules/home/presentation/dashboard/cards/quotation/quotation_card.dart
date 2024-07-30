@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:onil/app/modules/home/infra/data/quotation.dart';
-import 'package:onil/app/modules/home/presentation/quotation/quotation_controller.dart';
-import 'package:onil/app/shared/mixin/mixin.dart';
+import 'package:onil/app/modules/home/presentation/dashboard/cards/quotation/quotation_controller.dart';
+import 'package:onil/app/shared/mixin/state_mixin.dart';
 
-class QuotationView extends GetView<QuotationController> {
-  const QuotationView({super.key});
+class QuotationCard extends GetView<QuotationController> {
+  const QuotationCard({super.key});
 
   @override
   Widget build(BuildContext context) {

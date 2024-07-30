@@ -1,9 +1,6 @@
+import 'package:onil/app/modules/home/domain/repository/quotation.dart';
 import 'package:onil/app/modules/home/infra/data/quotation.dart';
 import 'package:onil/app/shared/adapters/rest_client_adapter/rest_client_adapter.dart';
-
-abstract class IQuotationRepository {
-  Future<List<Quotation>> getQuotations();
-}
 
 class QuotationRepository extends IQuotationRepository {
   final RestClientAdapter _api;

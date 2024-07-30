@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:onil/app/modules/home/domain/constants/icons.dart';
-import 'package:onil/app/modules/home/presentation/balance/balance_controller.dart';
+import 'package:onil/app/modules/home/presentation/dashboard/cards/balance/balance_controller.dart';
 import 'package:onil/app/shared/extension/strings.dart';
 import 'package:onil/app/shared/mixin/mixin.dart';
 
-class BalanceView extends GetView<BalanceController> {
-  const BalanceView({super.key});
+class BalanceCard extends GetView<BalanceController> {
+  const BalanceCard({super.key});
 
   @override
   Widget build(BuildContext context) {

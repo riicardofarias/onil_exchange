@@ -1,12 +1,11 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
-import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:heroicons/heroicons.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:onil/app/modules/home/presentation/balance/balance_view.dart';
+import 'package:onil/app/modules/home/presentation/dashboard/cards/balance/balance_card.dart';
+import 'package:onil/app/modules/home/presentation/dashboard/cards/quotation/quotation_card.dart';
 import 'package:onil/app/modules/home/presentation/dashboard/home_controller.dart';
-import 'package:onil/app/modules/home/presentation/quotation/quotation_view.dart';
 
 class HomeView extends GetView<IHomeController> {
   const HomeView({super.key});
@@ -26,8 +25,8 @@ class HomeView extends GetView<IHomeController> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            BalanceView(),
-            QuotationView(),
+            BalanceCard(),
+            QuotationCard(),
           ],
         )
       ),

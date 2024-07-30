@@ -1,10 +1,7 @@
+import 'package:onil/app/modules/home/domain/repository/balance.dart';
 import 'package:onil/app/modules/home/infra/data/currency.dart';
 import 'package:onil/app/modules/home/infra/data/user_wallet.dart';
 import 'package:onil/app/shared/adapters/rest_client_adapter/rest_client_adapter.dart';
-
-abstract class IBalanceRepository {
-  Future<List<UserWallet>> getBalance();
-}
 
 class BalanceRepository implements IBalanceRepository {
   final RestClientAdapter _api;

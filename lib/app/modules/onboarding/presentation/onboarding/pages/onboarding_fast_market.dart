@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:onil/app/modules/onboarding/domain/constants/onboarding_assets.dart';
-import 'package:onil/app/modules/onboarding/domain/constants/onboarding_translate.dart';
+import 'package:onil/app/modules/onboarding/domain/constants/assets.dart';
+import 'package:onil/app/modules/onboarding/domain/constants/translate.dart';
 
 class OnboardingFastMarket extends StatelessWidget {
   const OnboardingFastMarket({super.key});

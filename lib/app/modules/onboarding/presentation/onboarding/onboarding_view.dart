@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:onil/app/modules/onboarding/domain/constants/onboarding_translate.dart';
+import 'package:onil/app/modules/onboarding/domain/constants/translate.dart';
 import 'package:onil/app/modules/onboarding/presentation/onboarding/onboarding_controller.dart';
 import 'package:onil/app/modules/onboarding/presentation/onboarding/pages/exports.dart';
 import 'package:onil/app/routes/app_routes.dart';

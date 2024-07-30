@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:onil/app/modules/authentication/domain/constants/authentication_translate.dart';
+import 'package:onil/app/modules/authentication/domain/constants/translate.dart';
 import 'package:onil/app/modules/authentication/presentation/sign-in/sign_in_controller.dart';
 import 'package:onil/app/routes/app_routes.dart';
 import 'package:onil/app/theme/app_color.dart';

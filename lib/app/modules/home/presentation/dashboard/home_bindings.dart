@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
 import 'package:onil/app/modules/home/infra/repository/balance_repository.dart';
 import 'package:onil/app/modules/home/infra/repository/quotation_repository.dart';
-import 'package:onil/app/modules/home/presentation/balance/balance_controller.dart';
-import 'package:onil/app/modules/home/presentation/quotation/quotation_controller.dart';
+import 'package:onil/app/modules/home/presentation/dashboard/cards/balance/balance_controller.dart';
+import 'package:onil/app/modules/home/presentation/dashboard/cards/quotation/quotation_controller.dart';
 
 import 'home_controller.dart';
 
