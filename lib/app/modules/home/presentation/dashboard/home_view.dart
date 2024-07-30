@@ -1,9 +1,12 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
+import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:heroicons/heroicons.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:onil/app/modules/home/home_controller.dart';
+import 'package:onil/app/modules/home/presentation/balance/balance_view.dart';
+import 'package:onil/app/modules/home/presentation/dashboard/home_controller.dart';
+import 'package:onil/app/modules/home/presentation/quotation/quotation_view.dart';
 
 class HomeView extends GetView<IHomeController> {
   const HomeView({super.key});
@@ -11,7 +14,23 @@ class HomeView extends GetView<IHomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(),
+      appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {  },
+            icon: const HeroIcon(HeroIcons.bellAlert),
+          )
+        ],
+      ),
+      drawer: Drawer(),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            BalanceView(),
+            QuotationView(),
+          ],
+        )
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {  },
         shape: CircleBorder(),

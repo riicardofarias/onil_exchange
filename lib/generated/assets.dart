@@ -21,6 +21,8 @@ class Assets {
   static const String fontsPoppinsSemiBoldItalic = 'assets/fonts/Poppins-SemiBoldItalic.ttf';
   static const String fontsPoppinsThin = 'assets/fonts/Poppins-Thin.ttf';
   static const String fontsPoppinsThinItalic = 'assets/fonts/Poppins-ThinItalic.ttf';
+  static const String iconsHomeBackground = 'assets/icons/home_background.svg';
+  static const String iconsHomeCoin = 'assets/icons/home_coin.svg';
   static const String imagesOnboarding1 = 'assets/images/onboarding_1.svg';
   static const String imagesOnboarding2 = 'assets/images/onboarding_2.svg';
   static const String imagesOnboarding3 = 'assets/images/onboarding_3.svg';
