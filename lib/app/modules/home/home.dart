@@ -1,3 +1,3 @@
-export 'presentation/dashboard/home_bindings.dart';
-export 'presentation/dashboard/home_middleware.dart';
-export 'presentation/dashboard/home_view.dart';
+export 'presentation/home/home_bindings.dart';
+export 'presentation/home/home_middleware.dart';
+export 'presentation/home/home_view.dart';

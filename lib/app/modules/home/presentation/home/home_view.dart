@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:heroicons/heroicons.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:onil/app/modules/home/presentation/dashboard/cards/balance/balance_card.dart';
-import 'package:onil/app/modules/home/presentation/dashboard/cards/quotation/quotation_card.dart';
-import 'package:onil/app/modules/home/presentation/dashboard/home_controller.dart';
+import 'package:onil/app/modules/home/presentation/dashboard/dashboard_view.dart';
+import 'package:onil/app/modules/home/presentation/home/home_controller.dart';
+import 'package:onil/app/modules/market/presentation/market/market_view.dart';
+import 'package:onil/app/modules/settings/presentation/settings/settings_view.dart';
+import 'package:onil/app/modules/wallet/presentation/wallets/wallets_view.dart';
 
-class HomeView extends GetView<IHomeController> {
+class HomeView extends GetView<HomeController> {
   const HomeView({super.key});
 
   @override
@@ -22,13 +24,15 @@ class HomeView extends GetView<IHomeController> {
         ],
       ),
       drawer: Drawer(),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            BalanceCard(),
-            QuotationCard(),
-          ],
-        )
+      body: PageView(
+        onPageChanged: controller.onPageChanged,
+        controller: controller.pageCtrl,
+        children: [
+          DashboardView(),
+          MarketView(),
+          WalletsView(),
+          SettingsView(),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {  },

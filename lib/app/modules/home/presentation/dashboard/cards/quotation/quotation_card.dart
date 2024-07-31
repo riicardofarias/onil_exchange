@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:onil/app/modules/home/infra/data/quotation.dart';
 import 'package:onil/app/modules/home/presentation/dashboard/cards/quotation/quotation_controller.dart';
 import 'package:onil/app/shared/mixin/state_mixin.dart';
+import 'package:onil/app/theme/app_style.dart';
 
 class QuotationCard extends GetView<QuotationController> {
   const QuotationCard({super.key});
@@ -13,13 +14,11 @@ class QuotationCard extends GetView<QuotationController> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Padding(
-          padding: const EdgeInsets.fromLTRB(18, 18, 18, 0),
+          padding: const EdgeInsets.fromLTRB(18, 12, 18, 0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("Cotações", style: Get.textTheme.bodyLarge?.copyWith(
-                fontWeight: FontWeight.w600
-              )),
+              Text("Cotações", style: AppStyle.bodyLargeSemiBold),
               TextButton(
                 child: Text("Ver tudo"),
                 onPressed: (){},

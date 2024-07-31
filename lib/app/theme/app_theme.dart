@@ -41,6 +41,7 @@ final appThemeDark = ThemeData(
   textTheme: TextTheme(
     bodyMedium: TextStyle(fontSize: 14, color: AppColor.textNeutral5),
     bodySmall: TextStyle(fontSize: 12, color: AppColor.textNeutral3),
+    bodyLarge: TextStyle(fontSize: 18, color: AppColor.textNeutral5),
   ),
   iconButtonTheme: IconButtonThemeData(
     style: IconButton.styleFrom(

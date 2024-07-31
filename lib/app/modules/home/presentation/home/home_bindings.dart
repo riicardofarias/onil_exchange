@@ -12,6 +12,6 @@ class HomeBindings implements Bindings {
     Get.put<BalanceController>(BalanceController(BalanceRepository(Get.find())));
     Get.put<QuotationController>(QuotationController(QuotationRepository(Get.find())));
 
-    Get.put<IHomeController>(HomeController());
+    Get.put<HomeController>(HomeController());
   }
 }
