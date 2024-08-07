@@ -2,6 +2,8 @@ import 'package:event_bus/event_bus.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:logger/logger.dart';
+import 'package:onil/app/modules/authentication/domain/repository/authentication_repository.dart';
+import 'package:onil/app/modules/authentication/infra/repository/authentication_repository.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:onil/app/shared/adapters/device_info_adapter/device_info.dart';
 import 'package:onil/app/shared/adapters/logger_adapter/logger_adapter.dart';
@@ -25,7 +27,10 @@ class AppConfig {
 
     Get.put<ILoggerAdapter>(LoggerAdapter(Logger()));
     Get.put<IStorageAdapter>(StorageAdapter());
-    Get.put<RestClientAdapter>(RestClientAdapter(Get.find(), Get.find()));
+
+    Get.put<RestClientAdapter>(RestClientAdapter(Get.find(), Get.find(), Get.find()));
+
+    //StorageAdapter().setExpiresAt(0);
   }
 
   static String get baseUrl {

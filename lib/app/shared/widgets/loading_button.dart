@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:get/get.dart';
+import 'package:onil/app/theme/app_color.dart';
+import 'package:onil/app/theme/app_style.dart';
 
 class LoadingButton extends StatelessWidget {
   final bool loading;
@@ -19,7 +22,12 @@ class LoadingButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: !loading ? onPressed : () {},
-      child: child
+      child: !loading ? child : Center(
+        child: SpinKitThreeBounce(
+          color: AppColor.primaryTextColor,
+          size: 26,
+        ),
+      ),
     );
   }
 }

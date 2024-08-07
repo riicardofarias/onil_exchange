@@ -37,10 +37,9 @@ class ContainerButton extends StatelessWidget {
           Container(
             padding: padding ?? const EdgeInsets.symmetric(vertical: 10, horizontal: 14),
             width: double.infinity,
-            child: LoadingButton(
-              onPressed: onPressed,
-              loading: busy,
-              child: child,
+            child: ElevatedButton(
+              onPressed: !busy ? onPressed : () {},
+              child: child
             ),
           ),
           Visibility(

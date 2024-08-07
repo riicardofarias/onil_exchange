@@ -8,4 +8,6 @@ class AppColor {
 
   static const inputBackgroundColor = Color.fromRGBO(34, 35, 38, 1);
   static const inputTextColor = textNeutral2;
+
+  static const primaryTextColor = Color.fromRGBO(26, 26, 26, 1);
 }

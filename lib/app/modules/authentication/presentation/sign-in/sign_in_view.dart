@@ -3,10 +3,11 @@ import 'package:get/get.dart';
 import 'package:onil/app/modules/authentication/domain/constants/translate.dart';
 import 'package:onil/app/modules/authentication/presentation/sign-in/sign_in_controller.dart';
 import 'package:onil/app/routes/app_routes.dart';
+import 'package:onil/app/shared/widgets/loading_button.dart';
 import 'package:onil/app/theme/app_color.dart';
 import 'package:onil/app/theme/app_style.dart';
 
-class SignInView extends GetView<ISignInController> {
+class SignInView extends GetView<SignInController> {
   const SignInView({super.key});
 
   @override
@@ -27,6 +28,7 @@ class SignInView extends GetView<ISignInController> {
               TextFormField(
                 validator: controller.validateEmail,
                 keyboardType: TextInputType.emailAddress,
+                controller: controller.emailCtrl,
                 decoration: InputDecoration(
                   hintText: AuthenticationTranslate.signInEmailHint,
                 ),
@@ -38,6 +40,7 @@ class SignInView extends GetView<ISignInController> {
                 () => TextFormField(
                   obscureText: !controller.isPasswordVisible,
                   validator: controller.validatePassword,
+                  controller: controller.passwordCtrl,
                   decoration: InputDecoration(
                     hintText: AuthenticationTranslate.signInPasswordHint,
                     suffixIcon: GestureDetector(
@@ -56,9 +59,12 @@ class SignInView extends GetView<ISignInController> {
                 ),
               ),
               SizedBox(height: 40),
-              ElevatedButton(
-                onPressed: controller.onSignInPressed,
-                child: Text(AuthenticationTranslate.signInEnter, style: AppStyle.buttonLargeTextStyle)
+              Obx(
+                () => LoadingButton(
+                  loading: controller.isLoading,
+                  onPressed: controller.onSignInPressed,
+                  child: Text(AuthenticationTranslate.signInEnter, style: AppStyle.buttonLargeTextStyle)
+                ),
               )
             ],
           ),

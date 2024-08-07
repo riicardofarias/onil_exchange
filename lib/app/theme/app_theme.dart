@@ -3,7 +3,7 @@ import 'package:onil/app/theme/app_color.dart';
 
 const _defaultFontFamily = 'Poppins';
 const _primaryColor = Color.fromRGBO(247, 179, 24, 1);
-const _primaryTextColor = Color.fromRGBO(26, 26, 26, 1);
+const _primaryTextColor = AppColor.primaryTextColor;
 const _buttonBorderRadius = 12.0;
 
 // Input
@@ -55,6 +55,7 @@ final appThemeDark = ThemeData(
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
+      padding: const EdgeInsets.symmetric(vertical: 12),
       backgroundColor: _primaryColor,
       foregroundColor: _primaryTextColor,
       shape: RoundedRectangleBorder(

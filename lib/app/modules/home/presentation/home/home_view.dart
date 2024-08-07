@@ -41,22 +41,32 @@ class HomeView extends GetView<HomeController> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: Obx(
-        () => AnimatedBottomNavigationBar(
+        () => AnimatedBottomNavigationBar.builder(
           gapLocation: GapLocation.center,
           backgroundColor: Get.theme.bottomNavigationBarTheme.backgroundColor,
-          activeColor: Get.theme.bottomNavigationBarTheme.selectedItemColor,
           splashColor: Get.theme.bottomNavigationBarTheme.selectedItemColor,
           height: 60,
-          icons: [
-            LineIcons.home,
-            LineIcons.barChartAlt,
-            LineIcons.pieChart,
-            LineIcons.cog,
-          ],
           activeIndex: controller.activeIndex,
           onTap: (index) => controller.activeIndex = index,
+          itemCount: 4,
+          tabBuilder: (int index, bool isActive) => HeroIcon(
+            _bottomIcons[index], color: _getColor(isActive),
+          ),
         ),
       ),
     );
+  }
+
+  List<HeroIcons> get _bottomIcons {
+    return [
+      HeroIcons.home,
+      HeroIcons.chartBar,
+      HeroIcons.chartPie,
+      HeroIcons.cog6Tooth
+    ];
+  }
+  
+  Color? _getColor(bool isActive) {
+    return isActive ? Get.theme.bottomNavigationBarTheme.selectedItemColor : Get.theme.bottomNavigationBarTheme.unselectedItemColor;
   }
 }

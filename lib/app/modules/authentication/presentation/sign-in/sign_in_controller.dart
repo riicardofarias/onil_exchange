@@ -1,57 +1,65 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:onil/app/modules/authentication/domain/usecase/auth_email.dart';
+import 'package:onil/app/modules/authentication/infra/repository/authentication_repository.dart';
+import 'package:onil/app/routes/app_routes.dart';
+import 'package:onil/app/shared/adapters/storage_adapter/storage_adapter.dart';
 import 'package:onil/app/shared/extension/extension.dart';
+import 'package:onil/app/shared/mixin/loading_mixin.dart';
 
-abstract class ISignInController extends GetxController {
-  void onRevealPasswordPressed();
-  void onSignInPressed();
+class SignInController extends GetxController with LoadingMixin {
+  final AuthEmailUseCase _authEmailUseCase;
+  final IStorageAdapter _storageAdapter;
 
-  String? validateEmail(String? value);
-  String? validatePassword(String? value);
-
-  bool get isPasswordVisible;
-  TextEditingController get emailCtrl;
-  TextEditingController get passwordCtrl;
-  GlobalKey<FormState> get formKey;
-}
-
-class SignInController extends ISignInController{
   final RxBool _revealPassword = false.obs;
-  final TextEditingController _emailCtrl = TextEditingController();
-  final TextEditingController _passwordCtrl = TextEditingController();
+
+  final TextEditingController _emailCtrl = TextEditingController(
+    text: 'winkcler@gmail.com'
+  );
+
+  final TextEditingController _passwordCtrl = TextEditingController(
+    text: '123456'
+  );
+
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  @override
+  SignInController(
+    this._storageAdapter, this._authEmailUseCase
+  );
+
   void onRevealPasswordPressed() {
     _revealPassword.value = !_revealPassword.value;
   }
 
-  @override
-  void onSignInPressed() {
+  void onSignInPressed() async {
     if (_formKey.isNotValid) {
       return;
     }
+
+    try {
+      setLoading(true);
+
+      await _authEmailUseCase.execute(
+        _emailCtrl.text,
+        _passwordCtrl.text
+      );
+
+      Get.offNamed(AppRoutes.home);
+    }finally{
+      setLoading(false);
+    }
   }
 
-  @override
   String? validateEmail(String? value) {
     return (GetUtils.isNullOrBlank(value) ?? true) ? 'Campo obrigatório' : null;
   }
 
-  @override
   String? validatePassword(String? value) {
     return (GetUtils.isNullOrBlank(value) ?? true) ? 'Campo obrigatório' : null;
   }
 
-  @override
   bool get isPasswordVisible => _revealPassword.value;
-
-  @override
   TextEditingController get emailCtrl => _emailCtrl;
-
-  @override
   TextEditingController get passwordCtrl => _passwordCtrl;
-
-  @override
   GlobalKey<FormState> get formKey => _formKey;
 }

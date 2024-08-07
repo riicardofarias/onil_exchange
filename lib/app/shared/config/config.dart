@@ -8,6 +8,7 @@ enum Env {
 
 class Config {
   static const String apiUrl = "API_URL";
+  static const String authTokenRenewTime = "AUTH_TOKEN_RENEW_INTERNAL";
 
   static Future<void> initialize({ Env env = Env.development, bool validateOnInit = true }) async {
     if(env == Env.development) {
